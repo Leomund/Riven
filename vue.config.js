@@ -1,4 +1,6 @@
 module.exports = {
   lintOnSave: false,
-  publicPath: '<Riven>'
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/Riven/'
+    : '/'
 }
