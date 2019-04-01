@@ -1,4 +1,4 @@
-# riven
+# Riven mod prices for warframe
 
 ## Project setup
 ```
