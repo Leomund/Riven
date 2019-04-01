@@ -30,6 +30,18 @@
     :loading="!this.data[0]"
     hide-actions
   >
+    <template slot="headerCell" slot-scope="props">
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on }">
+          <span v-on="on">
+            {{ props.header.text }}
+          </span>
+        </template>
+        <span>
+          {{ props.header.description }}
+        </span>
+      </v-tooltip>
+    </template>
     <template v-slot:items="props">
       <td>{{ props.item.compatibility }}</td>
       <td>{{ props.item.type }}</td>
@@ -58,12 +70,12 @@ export default {
       platform: 'PC',
       search: '',
       headers: [
-        { text: 'Compatibility', value: 'compatibility' },
-        { text: 'Type', value: 'type' },
-        { text: 'Avera﻿ge﻿﻿ price', align: 'right', value: 'avg' },
-        { text: 'Max price', align: 'right', value: 'max' },
-        { text: 'Min Price', align: 'right', value: 'min' },
-        { text: 'Pop', align: 'right', value: 'pop' }
+        { text: 'Compatibility', value: 'compatibility', description: 'Which Weapon is the Riven for﻿' },
+        { text: 'Type', value: 'type', description: 'Wha﻿t type of Riven is﻿ it' },
+        { text: 'Avera﻿ge﻿﻿ price', align: 'right', value: 'avg', description: 'Average value of trades with this Riven Type﻿' },
+        { text: 'Max price', align: 'right', value: 'max', description: 'Highest amount of Platinum per trade of this Riven Ty﻿pe' },
+        { text: 'Min Price', align: 'right', value: 'min', description: 'Low﻿est amount of Platinum per trade of this Riven Type' },
+        { text: 'Popularity', align: 'right', value: 'pop', description: 'Popularity of this Riven Type being traded within all traded Rivens' }
       ],
       data: []
     }
