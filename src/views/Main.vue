@@ -73,7 +73,7 @@ export default {
     getData () {
       this.data = []
       this.$router.push({ name: 'Main', params: { platform: this.platform } })
-      this.$http.get(`http://n9e5v4d8.ssl.hwcdn.net/repos/weeklyRivens${this.platform}.json`).then((response) => {
+      this.$http.get(`https://n9e5v4d8.ssl.hwcdn.net/repos/weeklyRivens${this.platform}.json`).then((response) => {
         this.data = response.data.map(item => {
           item.name = `${item.compatibility ? item.compatibility : ''} ${item.itemType}`
           item.type = item.itemType.replace(/ .*/, '')
